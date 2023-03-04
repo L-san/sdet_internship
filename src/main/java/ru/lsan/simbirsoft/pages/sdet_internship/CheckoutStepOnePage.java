@@ -7,7 +7,7 @@ public class CheckoutStepOnePage {
 
     private final By firstName = By.id("first-name");
     private final By lastName = By.id("last-name");
-    private final By postalCode = By.id("postal-code");
+    private final By zipCode = By.id("postal-code");
     private final By continueButton = By.id("continue");
     private final WebDriver driver;
 
@@ -23,8 +23,8 @@ public class CheckoutStepOnePage {
         driver.findElement(lastName).sendKeys(name);
     }
 
-    public void setPostalCode(String pcode) {
-        driver.findElement(postalCode).sendKeys(pcode);
+    public void setZipCode(String zip) {
+        driver.findElement(zipCode).sendKeys(zip);
     }
 
     public CheckoutStepTwoPage clickContinueButton() {
@@ -32,10 +32,10 @@ public class CheckoutStepOnePage {
         return new CheckoutStepTwoPage(driver);
     }
 
-    public CheckoutStepTwoPage setInfoAndContinue(String firstName, String lastName, String postalCode) {
+    public CheckoutStepTwoPage setInfoAndContinue(String firstName, String lastName, String zipCode) {
         setFirstName(firstName);
         setLastName(lastName);
-        setPostalCode(postalCode);
+        setZipCode(zipCode);
         return clickContinueButton();
     }
 
